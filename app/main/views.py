@@ -34,7 +34,7 @@ def new_blog():
 def index():
 
     getquotes = getQuotes()
-    message= "Welcome to Blog Website!!"
+    message= "Welcome to Awesome Blog Website!!"
     title= 'Awesome Blog'
     return render_template('index.html',getquotes = getquotes,message=message,title=title)
 
@@ -149,5 +149,6 @@ def subBlog():
 
 
         mail_message("You have successfully subscribed to Awesome Blog website,Thank for joining us", "email/welcome_subs", subs.email,subs=subs)
+        return redirect(url_for('main.index'))
     
     return render_template('subscribe.html',subscribe_form=form)
