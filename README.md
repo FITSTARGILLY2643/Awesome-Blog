@@ -1,4 +1,4 @@
-# Awesome Pitch
+# Awesome Blog
 ## Description
 This is an application that allows users to create an account,post their blogs,view blogs posted by others and also comment on those blogs if they are logged in.
 ## BDD
