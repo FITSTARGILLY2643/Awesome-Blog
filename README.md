@@ -15,7 +15,7 @@ The program lets a user publish a blogh
 * Output: Redirects user to a form that helps him/her create a new blog
 
 ## Live Site
-https://awesome-pitch.herokuapp.com/
+https://fitsblog.herokuapp.com/
 ## Prerequisites
 * Python
 * Pip
