@@ -2,42 +2,41 @@
 {% block styles%} {{ super() }}
 
 <link rel="stylesheet" href="../static/css/index.css"> 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
-  
+
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron" style="margin-top:0; background-color:aliceblue; font-size: 30px; font-family: 'Merienda', cursive;  padding-top: 40px; text-align: center;">
-  <h2 class="text-center" >BLOGS!;</h2>
-  <h4 class="text-center"> Welcome to Vibrant Blogs,
-     We make your dreams come through by allowing you to write your Blog</h4>
-  </div> 
 
-<body >
-  <div id="body" style="background-image: url('../static/photos/photo-1542664408056-8ec64f24de47.jpeg'); background-size: cover;">
+<div class="jumbotron text-center" style= "background-color: #55BCC9; color:white; padding: 5px;">
+   
+  <h2>Welcome to Awesome Blog</h2>
+  <h3 style="font-style: italic;">Get your favourite and latest posts here,write a  posts today and you can also subscribe to get all the updates</h3>
+</div>
+    <div class="container">  
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <br>
+              <a href="../blog/" class="btn btn-info btn-sm">Create Blog</a>
+              <a href="{{url_for('main.category')}}" class="btn btn-info btn-sm">View blogs</a>
 
-    <div class="container" >  
-      <!-- <div class="col-sm" >
-        <div class=" card col-sm mt-2"> -->
-          <div id="card" style="text-align: center;">
-              <h3>Blog</h3>
-              <hr>
-              
-              <button type="button" class="btn btn-outline-primary"><a href="../blog/">Enter a New Blog</a></button><br><br>
-              <button type="button" class="btn btn-outline-primary"><a href="{{url_for('main.category')}}">Read More</a></button>
-          </div>
-      </div>
-      
-      <div style="font-size: 30px; font-family: 'Merienda', cursive;  padding-top: 40px; text-align: center;">
-        {% for quote in getquotes %}
-        <p>{{quote.quote}}</p>
-        <p class="text-primary"> By: {{quote.author}}</p>
-        {% endfor %}
-    
-    </div>
-    </div>
+            </div>
+
+            <div class="col-md-4">
+              <div style="font-size: 16px;">
+                <h3 style="color:blue">Quote</h3>
+               {% for quote in getquotes %}
+               <p style="color:maroon">{{quote.quote}}</p>
+               <p style="color:blue">{{quote.author}}</p>
+               {% endfor %}
+           
+             </div>
+             </div>
+     </div>
  
-  </body>
+
+     </div>
+     <hr>
     
-  
+       
     {% endblock%}

@@ -6,9 +6,9 @@
 
 {% block content %}
 <body>  
-  <div class="container" style="background-image: url('../static/photos/photo-1542664408056-8ec64f24de47.jpeg'); background-size: cover">
+  <div class="container">
   <br> <hr>   
-  <h3 class="text-center">BLOG COMMENTS</h3>
+  <h3 style="color:blue; text-align:center;">Blogs</h3>
   
     <div class="row">
       <div class="col-md-4"></div>
@@ -18,25 +18,26 @@
           {% for category in category[::-1] %}
 
           <div class="card bg-transparent border-success">
-            <div class="card-header bg-transparent border-success">
+            <div class="card-header bg-transparent border-success" style="color:blue">
               {{category.title}}
             </div>
             <div class="card-body text">
                 <p>{{category.blog}}</p><br>
-                <footer class="blockquote-footer bg-transparent border-success">{{category.author}}
+                <footer class="blockquote-footer bg-transparent border-success" style="color:maroon">{{category.author}}
                   <br><cite title="Source Title">Publish date: {{category.date.strftime('%Y-%m-%d')}}</cite></footer>
             </div>
             <div class="card-footer bg-transparent border-success">
-                <button type="button" class="btn btn-outline-success btn-sm"  ><a href="/new_comment/{{category.id}}">Comment</a></button> 
-                <button type="button" class="btn btn-outline-success btn-sm" ><a href="/comments/{{category.id}}">View comments</a></button>
-                <button><a href="{{url_for('main.deleteBlog', id = category.id)}}">Delete Blog</a></button>
+              <a href="/comments/{{category.id}}" class="btn btn-info btn-sm">View comments</a>
+              <a href="/new_comment/{{category.id}}" class="btn btn-info btn-sm">Comment</a>
+              <a href="{{url_for('main.deleteBlog', id = category.id)}}" class="btn btn-info btn-sm">Delete Blog</a>
+
               </div>
               <hr> <br>
             </div>
           </div>
         </div>
         
-        <div class="col-md-4" style="text-align: center;">
+        <div class="col-md-4" style="text-align: left;">
 
   
       {% endfor %}
